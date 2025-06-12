@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire de démonstration</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Formulaire de démonstration</h1>
+    <form
+      action="traitement.php"
+      method="post"
+      onsubmit="return showConfirmation()"
+    >
+      <!-- Champ de texte -->
+      <label for="nom">Nom :</label>
+      <input
+        type="text"
+        id="nom"
+        name="nom"
+        required
+        pattern="[A-Za-zÀ-ÿ ]+"
+        title="Veuillez entrer uniquement des lettres."
+      /><br /><br />
+
+      <!-- Champ de texte -->
+      <label for="prenom">Prénom :</label>
+      <input
+        type="text"
+        id="prenom"
+        name="prenom"
+        required
+        pattern="[A-Za-zÀ-ÿ ]+"
+        title="Veuillez entrer uniquement des lettres."
+      />
+      <br /><br />
+
+      <!-- Champ de courriel -->
+      <label for="email">E-mail :</label>
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <!-- Case à cocher -->
+      <label for="newsletter">
+        Inscription à la newsletter :
+        <input type="checkbox" name="newsletter" id="newsletter" /> </label
+      ><br /><br />
+
+      <!-- Boutons radio -->
+      <label>Sélectionnez votre sexe :</label><br />
+      <input type="radio" id="homme" name="sexe" value="homme" />
+      <label for="homme">Homme</label><br />
+      <input type="radio" id="femme" name="sexe" value="femme" />
+      <label for="femme">Femme</label><br />
+      <input type="radio" id="autre" name="sexe" value="autre" checked />
+      <label for="autre">Autre</label><br /><br />
+
+      <!-- Menu déroulant -->
+      <label for="pays">Pays :</label>
+      <select name="pays" id="pays" required>
+        <option value="" disabled selected>Selectionnez un pays</option>
+        <option value="france">France</option>
+        <option value="belgique">Belgique</option>
+        <option value="canada">Canada</option>
+        <option value="suisse">Suisse</option></select
+      ><br /><br />
+
+      <!-- Champ de texte multiligne -->
+      <label for="commentaires">Commentaires :</label><br />
+      <textarea
+        name="commentaires"
+        id="commentaires"
+        rows="3"
+        cols="40"
+      ></textarea
+      ><br /><br />
+
+      <!-- Bouton de soumission -->
+      <input type="submit" value="Soumettre" />
+    </form>
+    <script>
+      function showConfirmation() {
+        alert("Votre formulaire a bien été soumis !");
+      }
+    </script>
+  </body>
+</html>
